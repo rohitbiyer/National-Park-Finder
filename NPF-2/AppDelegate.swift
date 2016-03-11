@@ -25,18 +25,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             for dict in tempArray{
                 let parkName = dict["parkName"]! as! String
                 let parkLocation = dict["parkLocation"]! as! String
-                let latitude = (dict["latitude"]! as! NSString).doubleValue
-                let longitude = (dict["longitude"]! as! NSString).doubleValue
-                let location = CLLocation(latitude: latitude, longitude: longitude)
                 let dateFormed = dict["dateFormed"]! as! String
                 let area = dict["area"]! as! String
                 let link = dict["link"]! as! String
+                let latitude = (dict["latitude"]! as! NSString).doubleValue
+                let longitude = (dict["longitude"]! as! NSString).doubleValue
+                let location = CLLocation(latitude: latitude, longitude: longitude)
                 let imageLink = dict["imageLink"]! as! String
                 let imageName = dict["imageName"]! as! String
                 let imageSize = dict["imageSize"]! as! String
                 let imageType = dict["imageType"]! as! String
-                let parkDescription = dict["description"]! as! String
-                
+                let parkDescription = dict["description"]! as! String              
                 
             }
             
