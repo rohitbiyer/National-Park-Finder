@@ -35,7 +35,7 @@ class Park: CustomStringConvertible {
         self.init(parkName: "Unknown", parkLocation: "Unknown", dateFormed: "Unknown", area:"Unknown", link:"Unknown", location: nil, imageLink: "Unknown", imageName: "Unknown", imageSize: "Unknown", imageType: "Unknwown", parkDescription: "Unknown")
     }
     
-    init(parkName: String, parkLocation: String, dateFormed: String, area:String, link: String, location: CLLocation?, imageLink: String, parkDescription: String){
+    init(parkName: String, parkLocation: String, dateFormed: String, area:String, link: String, location: CLLocation?, imageLink: String, imageName:String, imageSize: String, imageType: String, parkDescription: String){
         self.setParkName(parkName)
         self.setParkLocation(parkLocation)
         self.setDateFormed(dateFormed)
