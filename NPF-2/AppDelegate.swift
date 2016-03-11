@@ -35,7 +35,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let imageName = dict["imageName"]! as! String
                 let imageSize = dict["imageSize"]! as! String
                 let imageType = dict["imageType"]! as! String
-                let parkDescription = dict["description"]! as! String              
+                let parkDescription = dict["description"]! as! String
+                
+                let p = Park(parkName: parkName, parkLocation: parkLocation, dateFormed: dateFormed, area: area, link: link, location: location, imageLink: imageLink, imageName: imageName, imageSize: imageSize, imageType: imageType, parkDescription: parkDescription)
                 
             }
             
