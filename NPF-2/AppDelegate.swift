@@ -39,8 +39,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
                 let p = Park(parkName: parkName, parkLocation: parkLocation, dateFormed: dateFormed, area: area, link: link, location: location, imageLink: imageLink, imageName: imageName, imageSize: imageSize, imageType: imageType, parkDescription: parkDescription)
                 
+                parks.append(p)
+                
             }
-            
+            for p in parks{
+                print("Park: \(p)")
+            }
             
         }
         return true
