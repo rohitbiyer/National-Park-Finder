@@ -20,16 +20,19 @@ class Park: CustomStringConvertible {
     private var link: String = ""
     private var location: CLLocation?
     private var imageLink: String = ""
+    private var imageName: String = ""
+    private var imageSize: String = ""
+    private var imageType: String = ""
     private var parkDescription: String = ""
     
     var description: String{
-        return "{\n\tparkName: \(parkName)\n\tparkLocation: \(parkLocation)\n\tdateFormed: \(dateFormed)\n\tarea: \(area)\n\tlink: \(link)\n\tlocation: \(location)\n\timageLink: \(imageLink)\n\tparkDescription: \(parkDescription)\n}"
+        return "{\n\tparkName: \(parkName)\n\tparkLocation: \(parkLocation)\n\tdateFormed: \(dateFormed)\n\tarea: \(area)\n\tlink: \(link)\n\tlocation: \(location)\n\timageLink: \(imageLink)\n\timageName: \(imageName)\n\timageSize: \(imageSize)\n\timageType: \(imageType)\n\tparkDescription: \(parkDescription)\n}"
     }
 
 // MARK: - Initializers
     
     convenience init(){
-        self.init(parkName: "Unknown", parkLocation: "Unknown", dateFormed: "Unknown", area:"Unknown", link:"Unknown", location: nil, imageLink: "Unknown", parkDescription: "Unknown")
+        self.init(parkName: "Unknown", parkLocation: "Unknown", dateFormed: "Unknown", area:"Unknown", link:"Unknown", location: nil, imageLink: "Unknown", imageName: "Unknown", imageSize: "Unknown", imageType: "Unknwown", parkDescription: "Unknown")
     }
     
     init(parkName: String, parkLocation: String, dateFormed: String, area:String, link: String, location: CLLocation?, imageLink: String, parkDescription: String){
@@ -40,6 +43,9 @@ class Park: CustomStringConvertible {
         self.setLink(link)
         self.setLocation(location)
         self.setImageLink(imageLink)
+        self.setImageName(imageName)
+        self.setImageSize(imageSize)
+        self.setImageType(imageType)
         self.setParkDescription(parkDescription)
         
     }
@@ -76,6 +82,18 @@ class Park: CustomStringConvertible {
     
      func getImageLink() -> String{
         return self.imageLink
+    }
+    
+    func getImageName() -> String{
+        return self.imageName
+    }
+    
+    func getImageSize() -> String{
+        return self.imageSize
+    }
+    
+    func getImageType() -> String{
+        return self.imageType
     }
     
     func getParkDescription() -> String{
@@ -133,6 +151,19 @@ class Park: CustomStringConvertible {
     func setImageLink(_imageLink: String){
         self.imageLink = _imageLink
     }
+    
+    func setImageName(_imageName: String){
+        self.imageName = _imageName
+    }
+    
+    func setImageSize(_imageSize: String){
+        self.imageSize = _imageSize
+    }
+    
+    func setImageType(_imageType: String){
+        self.imageType = _imageType
+    }
+
     func setParkDescription(_parkDescription: String){
         self.parkDescription = _parkDescription
     }
