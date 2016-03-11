@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +16,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        var parks: [Park] = []
+        
+        if let path = NSBundle.mainBundle().pathForResource("data", ofType: "plist"){
+            let tempDict = NSDictionary(contentsOfFile: path)
+            let tempArray = (tempDict!.valueForKey("parks")as! NSArray) as Array
+            
+            for dict in tempArray{
+                let parkName = dict["parkName"]! as! String
+                let parkLocation = dict["parkLocation"]! as! String
+                let latitude = (dict["latitude"]! as! NSString).doubleValue
+                let longitude = (dict["longitude"]! as! NSString).doubleValue
+                let location = CLLocation(latitude: latitude, longitude: longitude)
+                let dateFormed = dict["dateFormed"]! as! String
+                let area = dict["area"]! as! String
+                let link = dict["link"]! as! String
+                let imageLink = dict["imageLink"]! as! String
+                let imageName = dict["imageName"]! as! String
+                let imageSize = dict["imageSize"]! as! String
+                let imageType = dict["imageType"]! as! String
+                let parkDescription = dict["description"]! as! String
+                
+                
+            }
+            
+            
+        }
         return true
     }
 
